@@ -7,6 +7,9 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import {Provider} from "react-redux"
 import store from './redux/store.js'
 import Error from './component/Error.jsx'
+import RegisterForm from './component/Register.jsx'
+import LoginForm from './component/Login.jsx'
+
 
 const HomePage = lazy(()=> import("./component/HomePage.jsx"))
 
@@ -46,6 +49,14 @@ const approuter = createBrowserRouter([
         element : <Suspense fallback={<div>Loading....</div>}>
                   <CategoriesProduct/>
                   </Suspense>
+      },
+      {
+        path : "/api/register",
+        element : <RegisterForm/>
+      },
+      {
+        path : "/api/Login",
+        element : <LoginForm/>
       }
     ]
   }
